@@ -13,7 +13,7 @@ const byte LOADCELL_SCK_PIN = 13;
 
 const long STP_SIZE = 10;
 const float LOAD_CELL_SCALE_FACTOR = 0.00025f;
-const long LOAD_CELL_OFFSET = 35000;
+const long LOAD_CELL_OFFSET = -35000;
 
 Stepper stepper(EN_PIN, X_DIR_PIN, X_STP_PIN);
 LimitSwitch limit_left(LIMIT_SWITCH_LEFT_PIN);
