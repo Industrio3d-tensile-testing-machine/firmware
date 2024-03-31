@@ -1,3 +1,6 @@
+#ifndef STEPPER_SWITCH_H_INCLUDED
+#define STEPPER_SWITCH_H_INCLUDED
+
 #include <Arduino.h>
 
 class Stepper
@@ -19,9 +22,23 @@ public:
     for (int i = 0; i < abs(relative_steps); i++)
     {
       digitalWrite(m_stp_pin, HIGH);
-      delayMicroseconds(5000);
+      delayMicroseconds(1250);
       digitalWrite(m_stp_pin, LOW);
-      delayMicroseconds(5000);
+      delayMicroseconds(1250);
+    }
+
+    m_pos += relative_steps;
+  }
+  void move_to_fast(long relative_steps)
+  {
+    digitalWrite(m_dir_pin, relative_steps < 0);
+
+    for (int i = 0; i < abs(relative_steps); i++)
+    {
+      digitalWrite(m_stp_pin, HIGH);
+      delayMicroseconds(620);
+      digitalWrite(m_stp_pin, LOW);
+      delayMicroseconds(620);
     }
 
     m_pos += relative_steps;
@@ -53,3 +70,5 @@ private:
   byte m_stp_pin;
   long m_pos;
 };
+
+#endif // !STEPPER_SWITCH_H_INCLUDED

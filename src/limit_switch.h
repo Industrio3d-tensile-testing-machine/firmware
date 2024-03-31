@@ -1,3 +1,6 @@
+#ifndef LIMIT_SWITCH_H_INCLUDED
+#define LIMIT_SWITCH_H_INCLUDED
+
 #include <Arduino.h>
 
 class LimitSwitch
@@ -16,3 +19,5 @@ public:
 private:
   byte m_pin;
 };
+
+#endif // !LIMIT_SWITCH_H_INCLUDED
