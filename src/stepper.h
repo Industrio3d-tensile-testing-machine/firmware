@@ -36,9 +36,9 @@ public:
     for (int i = 0; i < abs(relative_steps); i++)
     {
       digitalWrite(m_stp_pin, HIGH);
-      delayMicroseconds(620);
+      delayMicroseconds(800);
       digitalWrite(m_stp_pin, LOW);
-      delayMicroseconds(620);
+      delayMicroseconds(800);
     }
 
     m_pos += relative_steps;
